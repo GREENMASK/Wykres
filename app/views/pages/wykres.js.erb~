@@ -1,0 +1,3 @@
+
+//"<%=j render(template: "pages/wykres.html.erb") %>";
+//"<%=j render(template: "pages/wykres.json.rabl") %>";

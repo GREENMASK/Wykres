@@ -1,0 +1,7 @@
+$("#tab").html("");
+$("#tab").append("<%= escape_javascript(render 'table') %>");
+$('#waluty').dataTable({sPaginationType: "full_numbers",bJQueryUI: true}).fnReloadAjax();
+
+
+
+

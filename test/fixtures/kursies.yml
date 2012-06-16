@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nazwa: MyString
+  kod: MyString
+  przelicznik: MyString
+  kurs: MyString
+  data: MyString
+
+two:
+  nazwa: MyString
+  kod: MyString
+  przelicznik: MyString
+  kurs: MyString
+  data: MyString

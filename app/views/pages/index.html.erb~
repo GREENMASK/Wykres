@@ -1,0 +1,37 @@
+ <h1><%=@title%> </h1>
+
+<div id="nav1">
+<ul>
+  <li id="z1">ŚREDNIE KURSY WALUT</li>
+  <li id="z2">WYKRES ZMIANY KURSU WALUTY</li>
+</ul>
+</div>
+<div id="contener">
+  
+
+ <div id="tabela">
+ <%= form_tag root_path ,:name=>"data_waluty",
+                          :remote => true do %>
+	<%= select_tag 'set_locale',
+	options_for_select(@wybor_daty,
+          :selected =>@wybor_daty.first ),
+          :remote => true, 
+	  :onchange => '' %>
+  <% end %>
+
+  <div id="tab"> <%= render 'table' %></div>
+</div>
+ <div id="wykres">
+  <%= form_tag root_path ,
+        :name=>"name_waluty",
+        :remote => true do %>
+	<%= select_tag 'set_name',
+	options_for_select(@nazwa),
+        :include_blank =>"none",
+	:onchange => 'change_name()' %>
+  <% end %>
+  <div id="chart"></div>
+ </div>
+
+</div >
+  

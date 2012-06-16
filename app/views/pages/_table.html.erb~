@@ -1,0 +1,20 @@
+<table id="waluty" class = "display">
+  <thead>
+   <tr>
+     <th>NAZWA</th>
+     <th>KOD</th>
+     <th>PRZELICZNIK</th>
+     <th>CENA ŚREDNIA</th>
+   </tr>
+  </thead>
+  <tbody>
+    <% @waluty.each do |w| %>
+      <tr>
+        <td><%= w.nazwa %></td>
+        <td><%= w.kod %></td>
+        <td><%= w.przelicznik %></td>
+        <td><%= w.kurs %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+$("#tab_w").html("");
+
+ var data=[];
+ var kurs=[];
+ "<% (0..@waluty.count-1).each do |w| %>";
+       data["<%= w %>"]= "<%= @waluty[w].data %>";
+       kurs["<%= w %>"]= "<%= @waluty[w].kurs %>";
+ "<% end %>";
+
+
+
+ 
+

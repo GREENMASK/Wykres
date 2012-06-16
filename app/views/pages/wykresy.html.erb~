@@ -1,0 +1,14 @@
+<h1><%= @title %></h1>
+<scirpt type="text/javascirpt" charset="urt-8">
+  
+</scirpt>
+<div id="nazwa_select">
+  <%= form_tag wykresy_path ,:name=>"data_waluty",:remote => true do %>
+	<%= select_tag 'set_locale',
+	options_for_select(@select_nazwa,:selected => @select_nazwa.first),
+	:onchange => 'buba()' %>
+  <% end %>
+</div> 
+<div id='tab_w' style="width:570px; height:400px;"></div>
+
+

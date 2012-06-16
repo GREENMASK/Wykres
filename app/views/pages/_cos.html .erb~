@@ -1,0 +1,3 @@
+<% @waluty.each do |w| %>
+    <%= w.data %>
+<% end %>

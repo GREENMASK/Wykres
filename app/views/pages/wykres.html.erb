@@ -1,0 +1,11 @@
+<h1>WYKRES</h1>
+<%= link_to "KURSY", root_path,:remote=> false  %>
+<div id="chart"style="width:400px; height: 300px;">  </div>
+
+<div id="select_wykres">
+<%= form_tag wykres_path ,:name=>"name_waluty",:remote => true do %>
+	<%= select_tag 'set_name',
+	options_for_select(@nazwa,:selected =>@nazwa.first ),
+	:onchange => 'change_name()' %>
+  <% end %>
+</div>

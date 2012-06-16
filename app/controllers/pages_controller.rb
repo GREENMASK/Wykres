@@ -1,0 +1,48 @@
+class PagesController < ApplicationController
+  include ApplicationHelper
+
+  def index 
+        @wybor_daty = data_wyboru_kursu
+        @nazwa = select_nazwa_waluty
+        @waluty = waluty_baza("data",params[:set_locale])
+          if(params[:set_locale])
+             respond_to do |format|
+               format.html
+               format.js
+             end
+          elsif(params[:set_name])
+             @kursy  = waluty_baza("nazwa",params[:set_name])
+             respond_to do |format|
+              format.html
+              format.js {render :json => @kursy }
+             end  
+          end
+  end
+
+ private 
+
+ def data_wyboru_kursu
+      temp = Kursy.find(:all,:select => 'DISTINCT data', 
+			   :order => 'data DESC')
+      data=[] 
+      (0..temp.count-1).each do |f|
+          data[f] = temp[f].data
+       end
+       data
+   end
+   
+ def select_nazwa_waluty
+    temp = Kursy.find(:all,:select => 'DISTINCT nazwa',:order => 'nazwa')
+   nazwa=[]
+    (0..temp.count-1).each do |k|
+      nazwa[k] = temp[k].nazwa
+    end
+    nazwa
+ end
+
+   def waluty_baza(key,value)
+       txt = key +"= '#{value}'"
+       waluty = Kursy.find(:all, :conditions => txt )
+   end
+
+end
